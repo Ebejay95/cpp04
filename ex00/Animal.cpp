@@ -6,13 +6,13 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:37:54 by jeberle           #+#    #+#             */
-/*   Updated: 2024/10/30 12:12:51 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/10/30 15:33:55 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Animal.hpp"
 
-Animal::Animal() : _type("unset") {
+Animal::Animal() : _type("Animal") {
 	std::cout << "Animal default constructor called" << std::endl;
 }
 
@@ -28,10 +28,15 @@ Animal& Animal::operator=(const Animal& src) {
 }
 
 Animal::~Animal() {
-	std::cout << "Animal destructor called for " << _type << std::endl;
+	std::cout << "Animal destructor called" << std::endl;
 }
 
-void	Animal::makeSound()
+std::string	Animal::getType(void) const
 {
-	std::cout << "somethings rustles in the undergrowth - might be an Animal"<< std::endl;
+	return (_type);
+}
+
+void	Animal::makeSound() const
+{
+	std::cout << "* Generic animal sound *" << std::endl;
 }
