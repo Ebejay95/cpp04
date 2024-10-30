@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:16:22 by jeberle           #+#    #+#             */
-/*   Updated: 2024/10/30 15:34:52 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/10/30 17:47:12 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 Dog::Dog() {
 	_type = "Dog";
 	std::cout << "Dog default constructor called" << std::endl;
+}
+
+Dog::Dog(const Dog& src) : Animal(src) {
+	std::cout << "Dog copy constructor called" << std::endl;
+}
+
+Dog& Dog::operator=(const Dog& src) {
+	if (this != &src)
+		Animal::operator=(src);
+	return (*this);
 }
 
 Dog::~Dog() {

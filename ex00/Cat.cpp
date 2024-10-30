@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:16:18 by jeberle           #+#    #+#             */
-/*   Updated: 2024/10/30 15:34:49 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/10/30 17:47:35 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 Cat::Cat() {
 	_type = "Cat";
 	std::cout << "Cat default constructor called" << std::endl;
+}
+
+
+Cat::Cat(const Cat& src) : Animal(src) {
+	std::cout << "Cat copy constructor called" << std::endl;
+}
+
+Cat& Cat::operator=(const Cat& src) {
+	if (this != &src)
+		Animal::operator=(src);
+	return (*this);
 }
 
 Cat::~Cat() {
