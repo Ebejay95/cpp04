@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:16:18 by jeberle           #+#    #+#             */
-/*   Updated: 2024/10/30 17:47:35 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/11/04 08:40:03 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Cat::Cat() {
 
 
 Cat::Cat(const Cat& src) : Animal(src) {
+	_type = "Cat";
 	std::cout << "Cat copy constructor called" << std::endl;
 }
 

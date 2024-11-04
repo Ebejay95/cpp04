@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:16:22 by jeberle           #+#    #+#             */
-/*   Updated: 2024/10/30 17:47:12 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/11/04 08:40:13 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ Dog::Dog() {
 }
 
 Dog::Dog(const Dog& src) : Animal(src) {
+	_type = "Dog";
 	std::cout << "Dog copy constructor called" << std::endl;
 }
 

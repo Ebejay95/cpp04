@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:45:00 by jeberle           #+#    #+#             */
-/*   Updated: 2024/10/30 15:56:25 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/11/04 09:42:35 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,39 @@ Brain& Brain::operator=(const Brain& src) {
 
 Brain::~Brain() {
 	std::cout << "Brain destructor called" << std::endl;
+}
+
+
+void	Brain::addIdea(const std::string& idea)
+{
+	for (int i = 0; (i < MAX_IDEAS); i++)
+	{
+		if (_ideas[i].empty())
+		{
+			_ideas[i] = idea;
+			break;
+		}
+	}
+}
+
+bool	Brain::hasIdeas(void) {
+	for (int i = 0; (i < MAX_IDEAS); i++)
+	{
+		if (!_ideas[i].empty())
+			return (true);
+	}
+	return (false);
+}
+
+void	Brain::printBrain(void) {
+	if (!this->hasIdeas())
+	{
+		std::cout << "\t🧠 brain seems to be empty\n" << std::endl;
+		return ;
+	}
+	std::cout << "\tBrain contains:" << std::endl;
+	for (int i = 0; i < MAX_IDEAS; i++)
+	{
+		std::cout << "\t🧠  " << _ideas[i] << std::endl;
+	}
 }

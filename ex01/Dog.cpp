@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:39:43 by jeberle           #+#    #+#             */
-/*   Updated: 2024/10/30 17:32:18 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/11/04 09:44:13 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,9 @@ Dog::~Dog() {
 void	Dog::makeSound() const
 {
 	std::cout << "🐶 Woof! 🐶"<< std::endl;
+}
+
+Brain	*Dog::getBrain(void) const
+{
+	return (_brain);
 }

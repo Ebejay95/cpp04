@@ -6,7 +6,7 @@
 #    By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/30 01:21:48 by jeberle           #+#    #+#              #
-#    Updated: 2024/10/30 14:22:06 by jeberle          ###   ########.fr        #
+#    Updated: 2024/11/04 08:49:31 by jeberle          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,9 @@ vpath %.d $(DEP_DIR)
 SRCS=	main.cpp \
 		Animal.cpp \
 		Cat.cpp \
-		Dog.cpp
+		Dog.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp
 
 #------------------------------------------------------------------------------#
 #--------------                      OBJECTS                      -------------#

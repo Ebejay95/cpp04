@@ -6,38 +6,85 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 01:23:13 by jeberle           #+#    #+#             */
-/*   Updated: 2024/10/30 15:36:32 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/11/04 08:58:57 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main(void)
 {
-	Animal animal;
-	animal.makeSound();
-	Dog sue;
-	sue.makeSound();
-	Cat hen;
-	hen.makeSound();
+	std::cout << "=== Regular Animal Tests ===" << std::endl;
+	{
+		Animal animal;
+		animal.makeSound();
+		Dog sue;
+		sue.makeSound();
+		Cat hen;
+		hen.makeSound();
 
-	const Animal* meta = new Animal();
-	const Animal* dog = new Dog();
-	const Animal* cat = new Cat();
+		const Animal* meta = new Animal();
+		const Animal* dog = new Dog();
+		const Animal* cat = new Cat();
 
-	std::cout << dog->getType() << std::endl;
-	std::cout << cat->getType() << std::endl;
-	std::cout << meta->getType() << std::endl;
+		std::cout << dog->getType() << std::endl;
+		std::cout << cat->getType() << std::endl;
+		std::cout << meta->getType() << std::endl;
 
-	cat->makeSound();
-	dog->makeSound();
-	meta->makeSound();
+		cat->makeSound();
+		dog->makeSound();
+		meta->makeSound();
 
-	delete meta;
-	delete dog;
-	delete cat;
+		delete meta;
+		delete dog;
+		delete cat;
+	}
+
+	std::cout << "\n=== Copy Constructor Tests ===" << std::endl;
+	{
+		Cat original;
+		Cat copy(original);
+
+		original.makeSound();
+		copy.makeSound();
+
+		Dog dogOriginal;
+		Dog dogCopy = dogOriginal;
+
+		dogOriginal.makeSound();
+		dogCopy.makeSound();
+	}
+
+	std::cout << "\n=== Wrong Animal Tests ===" << std::endl;
+	{
+		const WrongAnimal* meta = new WrongAnimal();
+		const WrongAnimal* cat = new WrongCat();
+
+		std::cout << cat->getType() << std::endl;
+		cat->makeSound();
+		meta->makeSound();
+
+		delete meta;
+		delete cat;
+	}
+	std::cout << "\n=== Direct WrongCat Test 1 ===" << std::endl;
+	{
+		WrongAnimal* pet = new WrongCat();
+		pet->makeSound();
+		WrongCat cat;
+		cat.makeSound();
+	}
+	std::cout << "\n=== Direct WrongCat Test 2 ===" << std::endl;
+	{
+		WrongCat wrongCat;
+		wrongCat.makeSound();
+		WrongCat copyWrongCat(wrongCat);
+		copyWrongCat.makeSound();
+	}
 
 	return (0);
 }

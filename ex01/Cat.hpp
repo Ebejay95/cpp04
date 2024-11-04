@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 15:39:42 by jeberle           #+#    #+#             */
-/*   Updated: 2024/10/30 17:25:19 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/11/04 09:44:10 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Cat : public Animal {
 		~Cat();
 
 		void	makeSound(void) const;
+		Brain*	getBrain(void) const;
 };
 
 #endif
