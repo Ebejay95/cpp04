@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jonathaneberle <jonathaneberle@student.    +#+  +:+       +#+        */
+/*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 14:57:41 by jeberle           #+#    #+#             */
-/*   Updated: 2024/11/04 23:41:45 by jonathanebe      ###   ########.fr       */
+/*   Updated: 2024/11/05 12:01:49 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 # include "AMateria.hpp"
 
 class Ice : public AMateria {
-    public:
-        Ice();
-        Ice(const Ice& src);
-        Ice& operator=(const Ice& src);
-        ~Ice();
+	public:
+		Ice();
+		Ice(const Ice& src);
+		Ice& operator=(const Ice& src);
+		~Ice();
 
-        AMateria* clone() const;
-        void use(ICharacter& target);
+		AMateria* clone() const;
+		void use(ICharacter& target);
 };
 
 #endif

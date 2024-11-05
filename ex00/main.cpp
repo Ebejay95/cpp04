@@ -6,7 +6,7 @@
 /*   By: jeberle <jeberle@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 01:23:13 by jeberle           #+#    #+#             */
-/*   Updated: 2024/11/04 08:58:57 by jeberle          ###   ########.fr       */
+/*   Updated: 2024/11/05 11:41:49 by jeberle          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int main(void)
 		pet->makeSound();
 		WrongCat cat;
 		cat.makeSound();
+		delete pet;
 	}
 	std::cout << "\n=== Direct WrongCat Test 2 ===" << std::endl;
 	{
